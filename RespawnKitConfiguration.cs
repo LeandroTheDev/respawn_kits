@@ -5,6 +5,7 @@ namespace RespawnKit
     public class RespawnKitConfiguration : IRocketPluginConfiguration
     {
         public List<KitItem> Items = new();
+        public string PlayerPath = "C:\\SteamLibrary\\steamapps\\common\\U3DS\\Servers\\myserver\\Players";
         public void LoadDefaults()
         {
             Items = new()

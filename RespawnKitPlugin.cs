@@ -17,6 +17,13 @@ namespace RespawnKit
 
         private void OnPlayerConnected(UnturnedPlayer player)
         {
+            // Check if is first time logging
+            if (!System.IO.Directory.Exists(Path.Combine(Configuration.Instance.PlayerPath, $"{player.Id}_0")))
+            {
+                // Give him a kit
+                PlayerRevived(player, UnityCoreModule.Vector3.up, 0);
+            }
+            // Add the event for player revived
             player.Events.OnRevive += PlayerRevived;
         }
 
